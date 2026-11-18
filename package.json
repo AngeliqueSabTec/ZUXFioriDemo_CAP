@@ -8,7 +8,6 @@
   "devDependencies": {
     "@sap/cds-dk": "^9",
     "cds-plugin-ui5": "^0.17.0",
-    "mbt": "^1.2.49",
     "rimraf": "^5.0.5"
   },
   "scripts": {

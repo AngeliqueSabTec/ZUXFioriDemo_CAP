@@ -128,8 +128,27 @@
                 "@com.sap.vocabularies.UI.v1.LineItem": {
                   "tableSettings": {
                     "type": "ResponsiveTable"
+                  },
+                  "actions": {
+                    "CreateBookingAction": {
+                      "text": "{i18n>createBookingButton}",
+                      "requiresSelection": false,
+                      "press": "sap.fe.demo.flightsop.ext.controller.OpenBookingsDialog.onOpenBookings"
+                    }
                   }
                 }
+              },
+              "views": {
+                "paths": [
+                  {
+                    "key": "Open",
+                    "annotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#Open"
+                  },
+                  {
+                    "key": "Closed",
+                    "annotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#Closed"
+                  }
+                ]
               }
             }
           }
@@ -141,7 +160,16 @@
           "options": {
             "settings": {
               "editableHeaderContent": false,
-              "contextPath": "/Flights"
+              "contextPath": "/Flights",
+              "controlConfiguration": {
+                "@com.sap.vocabularies.UI.v1.FieldGroup#GeneralData": {
+                  "fields": {
+                    "seatsAvailable": {
+                      "template": "sap.fe.demo.flightsop.ext.fragment.SeatsAvailableCustomField"
+                    }
+                  }
+                }
+              }
             }
           }
         }

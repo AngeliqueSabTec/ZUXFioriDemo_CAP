@@ -23,12 +23,12 @@ annotate FlightService.Flights with @(
     // BOUND action — needs a selected row
     { $Type: 'UI.DataFieldForAction',
       Action: 'FlightService.cancelFlight',
-      Label: 'Cancel Flight' },
+      Label: 'Cancel Flight' }
 
-    // UNBOUND action — always available in the toolbar
-    { $Type: 'UI.DataFieldForAction',
-      Action: 'FlightService.openBookingWindow',
-      Label: 'Open Booking Window' }
+    // Note: the "Create Booking" toolbar button is a plain custom action wired up in
+    // manifest.json (ext/controller/OpenBookingsDialog.js), not an annotation-based
+    // action — SAP FE always resets an annotation action's "press" back to its own
+    // default handler, so a custom flow can't be attached to one this way.
   ]
 );
 
